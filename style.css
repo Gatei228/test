@@ -125,7 +125,6 @@ html{
   display: flex;
   justify-content: space-between;
 
-  outline: 2px solid red;
 }
 
 .box3 h3 , .box5 h3, .box6 h3, .box7 h3{
@@ -231,7 +230,6 @@ html{
 
 .box4 {
   position: relative;
-  outline: 2px solid red;
   margin: 0 4.0rem;
 }
 
@@ -311,7 +309,7 @@ html{
 .box5{
   width: calc(100% - 8.0rem);
   height: 174.8vh;
-  outline: 2px solid red;
+
   margin: 0 4.0rem;
   margin-bottom: 45.3rem;
 }
@@ -325,13 +323,14 @@ html{
   width: calc(100%);
   height: 302.8rem;
   position: absolute;
-  outline: 2px solid red;
-  top: 277.36vh;
+
+  top: 257.36rem;
 }
 
 
 .box-text-anim span{
   width: 205%;
+  white-space: nowrap;
   background-color: #ffffff;
   color: #272727;
   text-align: center;
@@ -381,7 +380,7 @@ html{
   height: 102rem;
   width: calc(100% - 8.0rem);
   margin: 0 4.0rem;
-  outline: 2px solid red;
+
   display: flex;
   margin-bottom: 40.8rem;
   
@@ -438,7 +437,7 @@ html{
   height: 100vh;
   width: calc(100% - 8.0rem);
   margin: 0 4.0rem;
-  outline: 2px solid red;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -478,10 +477,6 @@ html{
   padding: 50vh 0;
 }
 
-.flipped {
-  transform: rotateY(180deg) !important; /* Поворачивает изображение на 180 градусов */
-  transition: transform 0.5s ease; /* Плавный переход */
-}
 
 
 

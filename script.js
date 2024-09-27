@@ -251,7 +251,7 @@ gsap.fromTo(
         start: "top bottom",
         end: "bottom top",
         scrub: 1 ,
-        // markers: true
+
     },
     y:"-19.8rem"
 }
@@ -435,7 +435,7 @@ gsap.fromTo(".box5", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.5,  
-      markers: true
+      
     },
     x: "-140rem",  
     y: "-70rem",
@@ -451,7 +451,7 @@ gsap.fromTo(".box-text-anim span:nth-child(3)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.5, 
-      markers: true
+      
     },
     x: "140rem", 
   }
@@ -467,7 +467,7 @@ gsap.fromTo(".box-text-anim span:nth-child(4)", {
         start: "top bottom", 
         end: "bottom top",
         scrub: 1.5,  
-        markers: true
+        
     },
     x: "-140rem",
     y: "-40rem"
@@ -485,7 +485,7 @@ gsap.fromTo(".box-text-anim span:nth-child(5)", {
         start: "top bottom", 
         end: "bottom top",
         scrub: 1.5,  
-        markers: true
+        
     },
     x: "-252rem",
     y: "63rem"
@@ -503,7 +503,7 @@ gsap.fromTo(".box-text-anim span:nth-child(1)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.5, 
-      markers: true
+      
     },
     x: "350rem", 
     y: "13rem"
@@ -519,7 +519,7 @@ gsap.fromTo(".b6-anim1 span:nth-child(2)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1, 
-      markers: true
+      
     },
     y: "-38.5rem"
   }
@@ -534,7 +534,7 @@ gsap.fromTo(".b6-anim1 span:nth-child(1)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.5, 
-      markers: true
+      
     },
     y: "-38.5rem"
   }
@@ -549,7 +549,7 @@ gsap.fromTo(".b6-anim2 span:nth-child(2)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.3, 
-      markers: true
+      
     },
     y: "-38.5rem"
   }
@@ -564,7 +564,7 @@ gsap.fromTo(".b6-anim2 span:nth-child(1)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.7, 
-      markers: true
+      
     },
     y: "-36rem"
   }
@@ -579,7 +579,7 @@ gsap.fromTo(".b6-anim3 > span:nth-child(1)", {
       start: "top bottom", 
       end: "bottom top",
       scrub: 1.9, 
-      markers: true
+      
     },
     y: "-36rem"
   }
@@ -604,7 +604,7 @@ function animbox6() {
           start: "top bottom", 
           end: "bottom top",
           scrub: scrubValue, 
-          markers: true,
+          
         },
         y: "-38.5rem"
       }
@@ -626,7 +626,7 @@ gsap.fromTo(".b6-anim4 span:nth-child(2)", {
     start: "top bottom", 
     end: "bottom top",
     scrub: 1.3, 
-    markers: true
+    
   },
   y: "-38.5rem"
 }
@@ -641,7 +641,7 @@ gsap.fromTo(".b6-anim4 span:nth-child(1)", {
     start: "top bottom", 
     end: "bottom top",
     scrub: 1.7, 
-    markers: true
+
   },
   y: "-36rem"
 }
@@ -657,7 +657,7 @@ gsap.fromTo(".box7", {
     end: () => `+=${document.querySelector(".box7").offsetHeight - document.querySelector(".box7-cont1").offsetHeight}px`,// Продолжительность фиксации (500px прокрутки)
     pin: ".box7-cont1",         // Закрепить элемент
     pinSpacing: false,  // Если нужно убрать отступы после фиксации
-    markers: true
+   
   }
 });
 
@@ -670,36 +670,67 @@ gsap.fromTo(".box7-cont2 img", {
     start: "top bottom", 
     end: "bottom top",
     scrub: 0, 
-    markers: true,
+    
   },
   y:  "100vh"  ,
   ease: "none",
 }
 );
 
-let isFlipped = false; // Флаг для отслеживания состояния переворота
-const img = document.querySelector(".box8 img"); // Получаем элемент изображения
-img.style.transform = '';
-gsap.fromTo(img,
+let isFlipped1 = false; // Флаг для отслеживания состояния переворота
+let isFlipped2 = false;
+const img1 = document.querySelector(".box8 img:nth-child(1)"); // Получаем элемент изображения
+const img2 = document.querySelector(".box8 img:nth-child(2)");
+
+gsap.fromTo(img1,
   {
-    x: "60vw" // Начальная позиция
+    x: "60vw", // Начальная позиция
+    rotateY: 0 // Начальный угол поворота
   }, 
   { 
     x: "-60vw", // Конечная позиция
     scrollTrigger: {
-      trigger: img, // Элемент триггера
+      trigger: img1, // Элемент триггера
       start: "top bottom", // Когда начинается анимация
       end: "bottom top", // Когда заканчивается анимация
       scrub: 0, // Плавное движение
-      markers: true, // Включаем маркеры для отладки
+       // Включаем маркеры для отладки
       onUpdate: (self) => {
         // Проверяем направление скролла
-        if (self.direction === -1 && !isFlipped) { // Если скроллим вверх и еще не перевернули
-          isFlipped = true; // Устанавливаем флаг переворота
-          img.style.transform = "rotateY(180deg)"; // Прямо изменяем стиль через JS
-        } else if (self.direction === 1 && isFlipped) { // Если скроллим вниз и уже перевернули
-          isFlipped = false; // Сбрасываем флаг переворота
-          img.style.transform = "rotateY(0deg)"; // Возвращаем в исходное состояние
+        if (self.direction === -1 && !isFlipped1) { // Если скроллим вверх и еще не перевернули
+          isFlipped1 = true; // Устанавливаем флаг переворота
+          gsap.to(img1, { rotateY: 180, duration: 0.1 }); // Плавно поворачиваем на 180 градусов
+        } else if (self.direction === 1 && isFlipped1) { // Если скроллим вниз и уже перевернули
+          isFlipped1 = false; // Сбрасываем флаг переворота
+          gsap.to(img1, { rotateY: 0, duration: 0.1 }); // Возвращаем в исходное состояние
+        }
+      }
+    },
+    ease: "none", // Линейная анимация
+  }
+);
+
+gsap.fromTo(img2,
+  {
+    x: "-60vw", // Начальная позиция
+    rotateY: 0 // Начальный угол поворота
+  }, 
+  { 
+    x: "60vw", // Конечная позиция
+    scrollTrigger: {
+      trigger: img2, // Элемент триггера
+      start: "top bottom", // Когда начинается анимация
+      end: "bottom top", // Когда заканчивается анимация
+      scrub: 0, // Плавное движение
+       // Включаем маркеры для отладки
+      onUpdate: (self) => {
+        // Проверяем направление скролла
+        if (self.direction === -1 && !isFlipped2) { // Если скроллим вверх и еще не перевернули
+          isFlipped2 = true; // Устанавливаем флаг переворота
+          gsap.to(img2, { rotateY: 0, duration: 0.1 }); // Плавно поворачиваем на 180 градусов
+        } else if (self.direction === 1 && isFlipped2) { // Если скроллим вниз и уже перевернули
+          isFlipped2 = false; // Сбрасываем флаг переворота
+          gsap.to(img2, { rotateY: 180, duration: 0.1 }); // Возвращаем в исходное состояние
         }
       }
     },
