@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      height: 200vh; /* Делаем страницу длиннее, чтобы был скролл */
+    }
+    .block {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+    #block1 {
+      background-color: red;
+      top: 50px;
+    }
+    #block2 {
+      background-color: blue;
+      top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="block1" class="block"></div>
+    <div id="block2" class="block"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+    // Проверка подключения ScrollTrigger
+    console.log("GSAP:", gsap);
+    console.log("ScrollTrigger:", ScrollTrigger);
+  
+    // Анимация для первого блока
+    gsap.to("#block1", {
+      y: 300,
+      scrollTrigger: {
+        trigger: "#block1",
+        start: "top center", // Начало анимации, когда верх блока достигает центра экрана
+        end: "bottom top", // Конец анимации, когда низ блока достигает верха экрана
+        scrub: true,
+        markers: true // Показывает маркеры для отладки
+      }
+    });
+  
+    // Анимация для второго блока
+    gsap.to("#block2", {
+      y: 100,
+      scrollTrigger: {
+        trigger: "#block2",
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+        markers: true // Показывает маркеры для отладки
+      }
+    });
+  </script>
+  
+</body>
+</html>

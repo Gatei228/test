@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="font/stylesheet.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+        
+        <script src="gsap/ScrollSmoother.min.js"></script>
+
+    </head>
+    <body>
+        <div class="wrapper" id="wrapper">
+            <div id="content">
+                <div class="box">
+                    <div class="box-cont1">
+                        <p class="box-cont1-p1">LOCOMOTIVE.CA</p>
+                        <p class="box-cont1-p2">V4.X – EDITION</p>
+                    </div>
+                    <div class="box-cont2">
+                        <p>LOCOMOTIVE</p>
+                        <p>SCROLL</p>
+                        <div class="V4X">
+                            <span>V</span>
+                            <span>4</span>
+                            <span>.</span>
+                            <span>X</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="hr-header">
+                <div class="box2">
+                    <div class="box2-cont1">
+                        <p>A simple scroll library used by developers at Locomotive. Built as a layer on top of ayamflow's virtual-scroll, it provides smooth scrolling with support for parallax effects, toggling classes, and triggering event listeners when elements are in the viewport.</p>
+                    </div>
+                    <div class="box2-cont2">
+                        <a href="#box3" class="boxanchor-1">
+                            <p>01. Speed Control</p>
+                            <span>↓</span>
+                        </a>    
+                        <hr>
+                        <a href="#box" class="boxanchor-2">
+                            <p>02. SCROLL DIRECTION</p>
+                            <span>↓</span>
+                        </a> 
+                        <hr>
+                        <a href="#box3" class="boxanchor-3">
+                            <p>03. LERP EFFECT</p>
+                            <span>↓</span>
+                        </a>
+                        <hr>
+                        <a href="#box3" class="boxanchor-4">
+                            <p>04. FIXED ELEMENTS</p>
+                            <span>↓</span>
+                        </a> 
+                        <hr>
+                    </div>
+                </div>
+                <div class="box3" id="box3">
+                    <div class="box3-cont1">
+                        <h3>01. <br>Speed control</h3>
+                        <p>Each element can be animated at a different speed. You get to choo-choo-choose!</p>
+                    </div>
+                    <div class="box3-cont2">
+                        <img src="img/tcb7iohdop94cmv53c.webp" alt="">
+                        <p>SPEED 2X</p>
+                    </div>
+                    <span>4x</span>
+                </div>
+                <div class="box4" id="box4">
+                     <div class="box4-cont1">
+                        <img src="img/57ATLjTJ_hY.jpg" alt="">
+                        <p>SPEED 4X</p>
+                     </div>
+                     <span>1x</span>
+                     <span>3x</span>
+                     <span>9x</span>
+                     <span>6x</span>
+                     <span>2x</span>
+                     <div class="box4-cont2">
+                        <img src="img/197923.jpg" alt="">
+                        <p>SPEED 6X</p>
+                     </div>
+                </div>
+                <div class="box5">
+                    <div class="box5-cont1">
+                        <h3>0.2 <br>Scroll direction</h3>
+                        <p>And if that wasn't enough, make 'em go backwards. <br> Or upwards. Or downwards!</p>
+                    </div>
+                </div>
+                <div class="box-text-anim">
+                    <span>Locomotives power trains</span>
+                    <span>Steam engines once ruled.</span>
+                    <span>Modern trains use diesel or electric.</span>
+                    <span>Engineers track performance.</span>
+                    <span>Locomotives move freight.</span>
+                </div>
+                <div class="box6">
+                    <div class="box6-cont1">
+                            <h3>0.3<br>Lerp elements</h3>
+                            <p>Stagger those smooth animations using delays to <br> create a rushing or dragging effect.</p>
+                    </div>
+                    <div class="box6-cont2">
+                        <div class="box6-anim b6-anim1">
+                            <span>01</span>
+                            <span>I HAVE A LERP</span>
+                        </div>
+                        <div class="box6-anim b6-anim2">
+                            <span>02</span>
+                            <span>ME TOO! <br> AND EVEN MORE</span>
+                        </div>
+                        <div class="box6-anim b6-anim3">
+                            <span>03</span>
+                            <div class="box6-span-anim">
+                                <span>B</span>
+                                <span>Y</span>
+                                <span>L</span>
+                                <span>E</span>
+                                <span>T</span>
+                                <span>T</span>
+                                <span>E</span>
+                                <span>R</span>
+                            </div>
+                        </div>
+                        <div class="box6-anim b6-anim4">
+                            <span>04</span>
+                            <span>SOOOO SMOOOOTH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="box7">
+                    <div class="box7-cont1">
+                        <h3>0.4<br>Fixed elements</h3>
+                        <p>Create slides that stick and untick to the viewport <br> while scrolling through.</p>
+                    </div>
+                    <div class="box7-cont2">
+                        <img src="img/793dc999ed7b54eb165ac57ec4667268.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="box8">
+                    <img src="img/free-icon-locomotive-1068643.png" alt="">
+                    <img src="img/free-icon-locomotive-1068643.png" alt="">
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>   
+        <script src="script.js"></script delays>
+    </body>
+</html>
